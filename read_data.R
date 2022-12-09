@@ -13,7 +13,7 @@ df <- readODS::read_ods(
 print(summary(df))
 
 # ------------------------------------------------------------------------------
-# create list of total fund absorbtion by year, divide by 1mil
+# create list of total funds absorbed by year, divided by 1mil for readability
 funds.total <- c(sum(df['SUM_inhab_2016']),
                  sum(df['SUM_inhab_2017']),
                  sum(df['SUM_inhab_2018']),
@@ -37,7 +37,7 @@ barplot(
 )
 
 # ------------------------------------------------------------------------------
-# create list of mean values, mean absorbtion funds by locality (remove 0 values), divide by 1mil
+# create list of mean values, mean of funds absorbed by LAU (removed 0 values)
 funds.mean <- c(mean(df$SUM_inhab_2016[df$SUM_inhab_2016 > 0]),
                 mean(df$SUM_inhab_2017[df$SUM_inhab_2017 > 0]),
                 mean(df$SUM_inhab_2018[df$SUM_inhab_2018 > 0]),
