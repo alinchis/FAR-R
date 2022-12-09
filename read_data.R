@@ -14,20 +14,22 @@ print(summary(df))
 
 # ------------------------------------------------------------------------------
 # create list of total fund absorbtion by year, divide by 1mil
-funds.total <- c(sum(df['SUM_2016_cst']),
-                 sum(df['SUM_2017_cst']),
-                 sum(df['SUM_2018_cst']),
-                 sum(df['SUM_2019_cst']),
-                 sum(df['SUM_2020_cst']),
-                 sum(df['SUM_2021_cst'])) / 1000000
+funds.total <- c(sum(df['SUM_inhab_2016']),
+                 sum(df['SUM_inhab_2017']),
+                 sum(df['SUM_inhab_2018']),
+                 sum(df['SUM_inhab_2019']),
+                 sum(df['SUM_inhab_2020']),
+                 sum(df['SUM_inhab_2021']),
+                 sum(df['SUM_EU_2016_2021_inhab'])
+                 ) / 1000000
 
 # barchart for total
 barplot(
   funds.total,
-  main = "Total Funds Absorbtion",
+  main = "Total sum of EU funds absorbed (in euro, at constant 2010 prices/ inhabitant)",
   xlab = "Year",
   ylab = "Funds (Mil EURO)",
-  names.arg = c("2016", "2017", "2018", "2019", "2020", "2021"),
+  names.arg = c("2016", "2017", "2018", "2019", "2020", "2021", "SUM 2016-2021"),
   horiz = FALSE,
   border="red",
   col="blue",
@@ -36,20 +38,22 @@ barplot(
 
 # ------------------------------------------------------------------------------
 # create list of mean values, mean absorbtion funds by locality (remove 0 values), divide by 1mil
-funds.mean <- c(mean(df$SUM_2016_cst[df$SUM_2016_cst > 0]),
-                mean(df$SUM_2017_cst[df$SUM_2017_cst > 0]),
-                mean(df$SUM_2018_cst[df$SUM_2018_cst > 0]),
-                mean(df$SUM_2019_cst[df$SUM_2019_cst > 0]),
-                mean(df$SUM_2020_cst[df$SUM_2020_cst > 0]),
-                mean(df$SUM_2021_cst[df$SUM_2021_cst > 0])) / 1000000
+funds.mean <- c(mean(df$SUM_inhab_2016[df$SUM_inhab_2016 > 0]),
+                mean(df$SUM_inhab_2017[df$SUM_inhab_2017 > 0]),
+                mean(df$SUM_inhab_2018[df$SUM_inhab_2018 > 0]),
+                mean(df$SUM_inhab_2019[df$SUM_inhab_2019 > 0]),
+                mean(df$SUM_inhab_2020[df$SUM_inhab_2020 > 0]),
+                mean(df$SUM_inhab_2021[df$SUM_inhab_2021 > 0]),
+                mean(df$SUM_EU_2016_2021_inhab[df$SUM_EU_2016_2021_inhab > 0])
+                )
 
 # barchart for mean
 barplot(
   funds.mean,
-  main = "Mean Funds Absorbtion",
+  main = "Mean of EU funds absorbed (in euro, at constant 2010 prices/ inhabitant)",
   xlab = "Year",
-  ylab = "Funds (Mil EURO)",
-  names.arg = c("2016", "2017", "2018", "2019", "2020", "2021"),
+  ylab = "Funds (EURO)",
+  names.arg = c("2016", "2017", "2018", "2019", "2020", "2021", "SUM 2016-2021"),
   horiz = FALSE,
   border="green",
   col="orange",
