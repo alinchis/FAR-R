@@ -1,0 +1,14 @@
+# load libraries
+library(readODS)
+
+# read data from ODS file
+df <- readODS::read_ods(
+  path="~/Git/FAR-R/data/EU_FAR_database_2016-2021.ods",
+  sheet="Database",
+  col_names=TRUE
+)
+
+# test
+str(df)
+
+
