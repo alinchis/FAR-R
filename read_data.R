@@ -26,7 +26,7 @@ funds.total <- c(sum(df['SUM_inhab_2016']),
 # barchart for total
 barplot(
   funds.total,
-  main = "Total sum of EU funds absorbed (in euro, at constant 2010 prices/ inhabitant)",
+  main = "Total sum of EU funds absorbed (in mil euro, at constant 2010 prices/ inhabitant)",
   xlab = "Year",
   ylab = "Funds (Mil EURO)",
   names.arg = c("2016", "2017", "2018", "2019", "2020", "2021", "SUM 2016-2021"),
